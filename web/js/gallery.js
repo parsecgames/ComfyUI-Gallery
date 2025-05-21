@@ -2,6 +2,7 @@
 
 import { galleryStyles } from './gallery_styles.js'; // Import styles
 import { resetGallery } from "./gallery_ui.js";
+import { app } from "../../scripts/app.js";
 /**
  * Represents the image gallery component, handling differential updates.
  */
@@ -768,6 +769,22 @@ export class Gallery {
                 this.showInfoWindow(imageInfo.metadata, imageInfo.url, index, filteredImages);
             };
             overlay.appendChild(infoButton);
+
+            const workflowButton = document.createElement("button");
+            workflowButton.classList.add("info-button");
+            workflowButton.textContent = "Load";
+            workflowButton.onclick = (event) => {
+                event.stopPropagation();
+                // Ensure index and filteredImages are passed correctly
+                if (typeof index === "undefined" || !filteredImages) {
+                    console.error(
+                        "createImageCard: workflowButton onclick: index or filteredImages is undefined!",
+                        { index, filteredImages },
+                    );
+                }
+                app.loadGraphData(imageInfo.metadata.workflow);
+            };
+            overlay.appendChild(workflowButton);
         }
 
         imageContainer.appendChild(overlay);
