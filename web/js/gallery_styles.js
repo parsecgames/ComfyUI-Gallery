@@ -333,8 +333,12 @@ export const galleryStyles = `
         background-color: #3498db; color: white; border: none;
         padding: 5px 10px; font-size: 12px; cursor: pointer;
         border-radius: 4px; transition: background-color 0.3s ease;
+        display: none;
     }
     .info-button:hover { background-color: #2980b9; }
+    .image-container-inner:hover .info-button {
+      display: inherit;
+    }
 
     /* Settings Popup Styles */
     .gallery-settings-popup {

@@ -772,6 +772,7 @@ export class Gallery {
 
             const workflowButton = document.createElement("button");
             workflowButton.classList.add("info-button");
+            workflowButton.style = "margin-left: 5px;";
             workflowButton.textContent = "Load";
             workflowButton.onclick = (event) => {
                 event.stopPropagation();

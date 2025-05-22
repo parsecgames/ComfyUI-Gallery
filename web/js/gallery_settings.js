@@ -21,7 +21,7 @@ export class GallerySettings {
         return {
             relativePath: "./",
             openButtonBoxQuery: "div.flex.gap-2.mx-2",
-            openButtonLabel: "Open Gallery",
+            openButtonLabel: "Gallery",
             openButtonFloating: false,
             autoPlayVideos: true,
             hideOpenButton: false, // ADDED: New setting
